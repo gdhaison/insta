@@ -1,0 +1,6 @@
+<% if params[:code] %>
+  <h1>You successfully authenticate, click here to continue </h1>
+  <%= link_to "Next", login_path(code: params[:code]), method: :post, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to "Login", "https://api.instagram.com/oauth/authorize/?client_id=1658643664290148&redirect_uri=https://calm-thicket-40488.herokuapp.com/sessions/new/&scope=user_profile,user_media&response_type=code" %>
+<% end %>
